@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Machine's</title>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fafafa;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block {
+            display: block;
+            justify-content: center;
+            width: 80%;
+            margin: auto;
+        }
+
+        .card {
+            border-radius: 5px;
+            box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+            padding: 30px;
+            margin: 20px;
+            width: 400px;
+            transition: all 0.3s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            cursor: pointer;
+        }
+
+        .card p {
+            color: #a3a5ae;
+            font-size: 16px;
+        }
+
+        .image {
+            float: right;
+            max-width: 64px;
+            max-height: 64px;
+        }
+
+        .blue {
+            border-left: 3px solid #4895ff;
+        }
+
+        .green {
+            border-left: 3px solid #3bb54a;
+        }
+
+        .red {
+            border-left: 3px solid #b3404a;
+        }
+
+        .div_convert {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        input {
+            color: white;
+            background: rgb(0, 255, 0);
+            transition: 1s;
+            border-radius: 5px;
+        }
+
+        input:hover,
+        input:focus{
+            background-color: white ;
+            color: black;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .foto {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+        article{
+            flex-direction: row;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="title">
+        <h2>Didactic Machine's</h2>
+    </div>
+    <div class="div_convert">
+        <input oninput="converter()" id="demo1" type="text" placeholder="Digite o valor em decimal">
+    </div>
+    </nav>
+    <div class="row">
+
+        <div class="card green">
+            <h2>Octal - Base 8</h2>
+            <p>
+            <div id="demo2"></div>
+            </p>
+            <!-- <img class="image" src="" alt="Octal" /> -->
+        </div>
+
+        <div class="card blue">
+            <h2>Binário - Base 2</h2>
+            <p>
+            <div id="demo4"></div>
+            </p>
+            <!-- <img class="image" src="" alt="Binário" /> -->
+        </div>
+
+        <div class="card red">
+            <h2>Hexadecimal - Base 10</h2>
+            <p>
+            <div id="demo3"></div>
+            </p>
+            <!-- <img class="image" src="" alt="Hexadecimal" /> -->
+        </div>
+    </div>
+
+    <div class="block">
+        <div id="title">
+            <h3>Conversão de binário para decimal</h3>
+        </div>
+        <article>
+            <p>O sistema binário só possui 2 algarismos. Cada posição tem um peso de
+                uma potência de 2 (base do sistema binário). Sendo assim, para se converter um número de binário para
+                decimal, deve-se multiplicar cada bit pela potência de sua posição e somar os resultados.</p>
+            <p>Por exemplo: </p>
+            <img src="https://www.multicalculadora.com.br/wp-content/imagens/converter-decimal-binario.jpg" class="foto" alt="Binário">
+            <img src="" alt=""  >
+        </article>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var i = 0;
+    function converter() {
+
+        i += 1
+
+        console.log(i)
+
+        var decimal = Number(demo1.value);
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+        // console.log (decimal);
+        // console.log (octal);
+        // console.log (hexadecimal);
+        // console.log (binaria);
+
+        document.getElementById("demo1").innerHTML = ` ${decimal}`;
+        document.getElementById("demo2").innerHTML = ` ${octal}`;
+        document.getElementById("demo3").innerHTML = ` ${hexadecimal.toUpperCase()}`;
+        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+
+        demo4.style.display = 'block'
+        demo3.style.display = 'block'
+        demo2.style.display = 'block'
+    }
+
+</script>
