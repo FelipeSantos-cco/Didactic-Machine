@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felipe Machine's</title>
+    <title>Didactic Machine's</title>
 
     <style>
         body {
@@ -21,9 +21,9 @@
 
         .block {
             display: block;
-            justify-content: center;
             width: 80%;
             margin: auto;
+            margin-bottom: 20px;
         }
 
         .card {
@@ -77,13 +77,14 @@
         }
 
         input:hover,
-        input:focus{
-            background-color: white ;
+        input:focus {
+            background-color: white;
             color: black;
         }
 
         .title {
             text-align: center;
+            margin-top: 20px;
         }
 
         .foto {
@@ -92,8 +93,14 @@
             margin-right: auto;
             width: 25%;
         }
-        article{
+
+        article {
             flex-direction: row;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
         }
     </style>
 
@@ -114,15 +121,20 @@
             <p>
             <div id="demo2"></div>
             </p>
-            <!-- <img class="image" src="" alt="Octal" /> -->
+            <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Video_8_Logo.svg" alt="Octal" />
         </div>
 
         <div class="card blue">
-            <h2>Binário - Base 2</h2>
-            <p>
-            <div id="demo4"></div>
-            </p>
-            <!-- <img class="image" src="" alt="Binário" /> -->
+            <a
+                href="https://youtu.be/zToihF2FE9I">
+                <h2>Binário - Base 2</h2>
+                <p>
+                    <div id="demo4"></div>
+                </p>
+                <img class="image"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png"
+                    alt="Binário" />
+            </a>
         </div>
 
         <div class="card red">
@@ -130,21 +142,32 @@
             <p>
             <div id="demo3"></div>
             </p>
-            <!-- <img class="image" src="" alt="Hexadecimal" /> -->
+            <img class="image"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/MA_Route_10.svg/1200px-MA_Route_10.svg.png"
+                alt="Hexadecimal" />
         </div>
     </div>
 
     <div class="block">
         <div id="title">
-            <h3>Conversão de binário para decimal</h3>
+            <h3>Conversão de decimal para binário</h3>
         </div>
         <article>
-            <p>O sistema binário só possui 2 algarismos. Cada posição tem um peso de
-                uma potência de 2 (base do sistema binário). Sendo assim, para se converter um número de binário para
-                decimal, deve-se multiplicar cada bit pela potência de sua posição e somar os resultados.</p>
-            <p>Por exemplo: </p>
+            <p>O Sistema Decimal é um sistema de numeração posicional que representa os números em base 10, utiliza
+                portanto dez símbolos diferentes. Este sistema utiliza os símbolos 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9.
+                Valores inteiros são objetos de dados comuns. Eles são usados em computação o tempo todo. Nas aulas de
+                matemática do ensino fundamental aprendemos sobre eles e como representá-los usando o sistema de
+                numeração decimal, esse mesmo, a base 10. </p>
+            <p>O Sistema Binário é um sistema de numeração posicional que representa os números em base 2, utiliza
+                portanto dois símbolos diferentes. Este sistema utiliza os símbolos 0 e 1.</p>
+            <div id="title">
+                <h3>Mas como podemos converter o decimal para binário facilmente?E vice-versa?</h3>
+            </div>
+            <p>Em um representação simples, pegamos o nosso numero decimal, por exemplo 155<sub>(10)</sub> e seu
+                correspondente binário é equivalente a 10011011<sub>(2)</sub>. Mas como? Simples. Você irá fazer a conta de 2<sup>0</sup> até 2<sup>8</sup>. Você vai pegar o número que mais se aproxima de 155<sub>(10)</sub> do mair resuldado, porém esse número não pode ultrapassar o valor decimal, no caso, 155.</p>
+            <p>Veja o exemplo a baixo:</p>
             <img src="https://www.multicalculadora.com.br/wp-content/imagens/converter-decimal-binario.jpg" class="foto" alt="Binário">
-            <img src="" alt=""  >
+            <p>Para transformar de <b>Binário</b> para <b>decimal</b> é o mesmo "esquema". Você vai escrever o seu número em binário, e o primeiro digito da direita será 2<sup>0</sup>. A cada novo digito que vier da esquerda, sera adicionado + 1 ao expoente, ou seja, o expoente aumenta na medida em que mudamos a possição, da direita para a esquerda. Veja novamente o exemplo a cima novamente.</p>
         </article>
 
     </div>
@@ -156,7 +179,7 @@
 <script>
 
     function converter() {
-        
+
         var decimal = Number(demo1.value);
 
         let octal = decimal.toString(8);
